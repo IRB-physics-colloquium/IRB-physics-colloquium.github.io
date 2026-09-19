@@ -480,11 +480,6 @@ hr.rule {
   font-style: italic;
 }
 
-.talk-abstract.is-tba {
-  color: var(--ft-muted);
-  font-style: italic;
-}
-
 /* =====================================================
    Past talks on the front page — current term only.
    Talks move up from #upcoming into #archive as they
