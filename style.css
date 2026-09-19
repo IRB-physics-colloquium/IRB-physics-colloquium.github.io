@@ -1,0 +1,665 @@
+/* =====================================================
+   Supek Theory Colloquium
+   Shares visual DNA with zvonimir.vlah personal site
+   (same fonts, same palette), but layout is tuned for
+   event listings rather than editorial prose.
+   ===================================================== */
+
+:root {
+/* Cool blue-grey (Washington Post, Bloomberg-ish) */
+  --ft-pink:      #EEF2F6;
+  --ft-pink-deep: #DDE4EC;
+  --ft-rule:      #B4BFCC;
+  --ft-white:     #FFFFFF; 
+
+/*  --ft-pink:      #FFF1E5;
+  --ft-pink-deep: #F2DFCE;
+  --ft-rule:      #C7B8A8;
+  --ft-white:     #FFFCF7; */
+  --ft-ink:       #1A1A1A;
+  --ft-ink-soft:  #33302E;
+  --ft-muted:     #66605C;
+  --ft-accent:    #990F3D;
+  --ft-link:      #0D7680;
+
+  --serif: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;
+  --sans:  'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  background-color: var(--ft-pink);
+  color: var(--ft-ink);
+  line-height: 1.55;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+a { color: var(--ft-ink); }
+a:hover { color: var(--ft-accent); }
+
+/* =====================================================
+   Masthead (matches personal site)
+   ===================================================== */
+
+.site-header {
+  background-color: var(--ft-pink);
+  border-bottom: 2px solid var(--ft-ink);
+  padding: 28px 0 0;
+}
+
+.header-inner { text-align: center; }
+
+.dateline {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ft-muted);
+  margin: 0 0 10px;
+  border-top: 1px solid var(--ft-rule);
+  border-bottom: 1px solid var(--ft-rule);
+  padding: 6px 0;
+  display: inline-block;
+  min-width: 340px;
+}
+
+.site-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin: 6px 0 4px;
+  letter-spacing: -0.015em;
+  color: var(--ft-ink);
+}
+
+.tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ft-muted);
+  margin: 0 0 22px;
+}
+
+.site-nav {
+  border-top: 1px solid var(--ft-rule);
+  border-bottom: 1px solid var(--ft-rule);
+  padding: 12px 0;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--ft-ink);
+  margin: 0 18px;
+}
+
+.site-nav a:hover { color: var(--ft-accent); }
+
+/* =====================================================
+   Shared editorial elements
+   ===================================================== */
+
+.kicker {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ft-accent);
+  margin: 0 0 8px;
+}
+
+.section-label {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ft-ink);
+  margin: 0 0 22px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ft-ink);
+  display: inline-block;
+}
+
+hr.rule {
+  border: none;
+  border-top: 1px solid var(--ft-rule);
+  margin: 50px 0;
+}
+
+.col-title {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 8px 0 14px;
+  line-height: 1.2;
+}
+
+/* =====================================================
+   Practical info strip — fixed details (time/place/zoom)
+   ===================================================== */
+
+.info-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 40px;
+  background-color: var(--ft-white);
+  border-top: 3px solid var(--ft-ink);
+  border-bottom: 1px solid var(--ft-rule);
+}
+
+.info-item {
+  padding: 20px 24px;
+  border-right: 1px solid var(--ft-rule);
+}
+
+.info-item:last-child { border-right: none; }
+
+.info-item .kicker { margin-bottom: 6px; }
+
+.info-value {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ft-ink);
+  margin: 0;
+}
+
+.zoom-link {
+  color: var(--ft-link);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.zoom-link:hover { text-decoration: underline; }
+
+.zoom-meta {
+  display: inline-block;
+  margin-top: 2px;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ft-muted);
+}
+
+.info-item a[href^="mailto:"] {
+  color: var(--ft-link);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.info-item a[href^="mailto:"]:hover { text-decoration: underline; }
+
+/* =====================================================
+   Talk blocks — the heart of the page
+   Shared base, then .featured and .past variants.
+   ===================================================== */
+
+.talk {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  padding: 24px 0;
+  border-top: 1px solid var(--ft-rule);
+}
+
+.talk:first-of-type { border-top: none; padding-top: 8px; }
+
+/* Date column */
+.talk-date { padding-top: 4px; }
+
+.talk-date .kicker { margin-bottom: 8px; }
+
+.date-big {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 4px;
+  color: var(--ft-ink);
+}
+
+.date-time {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ft-muted);
+  margin: 0;
+}
+
+/* Body column */
+.talk-body .kicker { margin-bottom: 6px; }
+
+.talk-title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  letter-spacing: -0.005em;
+  color: var(--ft-ink);
+}
+
+.talk-speaker {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--ft-ink);
+}
+
+.talk-speaker .affiliation {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ft-muted);
+}
+
+.talk-abstract {
+  margin: 0 0 10px;
+  color: var(--ft-ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  text-align: justify;
+}
+
+.talk-links { margin: 6px 0 0; }
+
+.talk-links:empty { display: none; }
+
+.slides-link {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ft-accent);
+  text-decoration: none;
+  margin-right: 18px;
+}
+
+.slides-link:hover { text-decoration: underline; }
+
+/* -----------------------------------------------------
+   .featured — the "next talk" hero
+   ----------------------------------------------------- */
+
+.talk.featured {
+  background-color: var(--ft-white);
+  padding: 32px 36px;
+  margin: 8px 0 40px;
+  border: none;
+  border-top: 4px solid var(--ft-ink);
+  border-bottom: 1px solid var(--ft-rule);
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+}
+
+.talk.featured .date-big {
+  font-size: 1.38rem;
+  line-height: 1.15;
+}
+
+.talk.featured .date-time {
+  font-size: 0.82rem;
+  margin-top: 6px;
+}
+
+.talk.featured .talk-title {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.talk.featured .talk-speaker {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ft-rule);
+}
+
+.talk.featured .talk-abstract {
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+/* -----------------------------------------------------
+   .past — archived talks, de-emphasized
+   ----------------------------------------------------- */
+
+.talk.past {
+  padding: 18px 0;
+  opacity: 0.88;
+}
+
+.talk.past .talk-title {
+  font-size: 1.15rem;
+}
+
+.talk.past .talk-abstract {
+  font-size: 0.92rem;
+  color: var(--ft-muted);
+}
+
+.talk.past .date-big {
+  font-size: 1rem;
+  color: var(--ft-muted);
+}
+
+.talk.past .kicker { color: var(--ft-muted); }
+
+/* =====================================================
+   About section
+   ===================================================== */
+
+.about {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+}
+
+.about p {
+  margin: 0 0 14px;
+  color: var(--ft-ink-soft);
+  text-align: justify;
+}
+
+.about p a {
+  color: var(--ft-link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ft-rule);
+  font-weight: 600;
+}
+
+.about p a:hover {
+  color: var(--ft-accent);
+  border-bottom-color: var(--ft-accent);
+}
+
+.about .col-title { margin-top: 8px; }
+
+.about-aside {
+  background-color: var(--ft-white);
+  padding: 24px 26px;
+  border-top: 3px solid var(--ft-ink);
+  align-self: start;
+}
+
+.about-aside .kicker { margin-bottom: 10px; }
+
+.about-aside .plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-aside .plain-list li {
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--ft-rule);
+  font-size: 0.95rem;
+}
+
+.about-aside .plain-list li:last-child { border-bottom: none; }
+
+.about-aside .meta {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ft-muted);
+}
+
+.about-meta {
+  font-size: 0.92rem;
+  color: var(--ft-ink-soft);
+  margin: 0;
+}
+
+/* =====================================================
+   Footer
+   ===================================================== */
+
+.site-footer {
+  background-color: var(--ft-pink-deep);
+  border-top: 2px solid var(--ft-ink);
+  margin-top: 72px;
+  padding: 28px 0;
+  text-align: center;
+}
+
+.footer-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0 0 6px;
+}
+
+.footer-meta {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ft-muted);
+  margin: 0;
+}
+
+/* -----------------------------------------------------
+   .is-tba — sits on the individual parts of a talk that
+   are not settled yet, rather than on the whole block, so
+   a confirmed speaker still reads at full strength next to
+   a title that has yet to arrive.
+   ----------------------------------------------------- */
+
+.talk-title.is-tba {
+  color: var(--ft-muted);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.talk-abstract.is-tba {
+  color: var(--ft-muted);
+  font-style: italic;
+}
+
+/* =====================================================
+   Past talks on the front page — current term only.
+   Talks move up from #upcoming into #archive as they
+   happen; at the end of term the whole set moves out
+   into archive.html and the empty state returns.
+   ===================================================== */
+
+/* Link out to completed terms. The separating rule only appears
+   once talks sit above it, so an empty section does not show a
+   stray line directly under the section label. */
+.archive-cta {
+  margin: 26px 0 0;
+}
+
+.talk + .archive-cta {
+  padding-top: 16px;
+  border-top: 1px solid var(--ft-rule);
+}
+
+.archive-cta a {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ft-accent);
+  text-decoration: none;
+}
+
+.archive-cta a:hover {
+  color: var(--ft-ink);
+  text-decoration: underline;
+}
+
+/* =====================================================
+   Archive page — intro, term groupings, back link
+   ===================================================== */
+
+.site-nav a.is-current {
+  color: var(--ft-accent);
+  border-bottom: 2px solid var(--ft-accent);
+  padding-bottom: 2px;
+}
+
+.archive-intro {
+  margin-top: 40px;
+  margin-bottom: 44px;
+}
+
+.archive-intro .section-label { margin-bottom: 0; }
+
+.term { margin-bottom: 8px; }
+
+.term + .term { margin-top: 54px; }
+
+.term-head {
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--ft-ink);
+}
+
+.term-title {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 4px;
+  color: var(--ft-ink);
+}
+
+.term-meta {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ft-muted);
+  margin: 0;
+}
+
+/* The first talk in each term sits under its own heading rule,
+   so it does not need a second border above it. */
+.term .talk:first-of-type { border-top: none; padding-top: 8px; }
+
+.back-link {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.back-link a {
+  color: var(--ft-accent);
+  text-decoration: none;
+}
+
+.back-link a:hover { text-decoration: underline; }
+
+/* =====================================================
+   Responsive
+   ===================================================== */
+
+@media (max-width: 900px) {
+  .site-title { font-size: 2.8rem; }
+
+  .info-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-item {
+    border-right: none;
+    border-bottom: 1px solid var(--ft-rule);
+  }
+
+  .info-item:nth-child(odd) { border-right: 1px solid var(--ft-rule); }
+  .info-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  .talk {
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+  }
+
+  .talk.featured {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 26px 28px;
+  }
+
+  .talk.featured .talk-title { font-size: 1.6rem; }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .term-title { font-size: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+
+  .site-title { font-size: 2.1rem; }
+  .tagline { font-size: 0.95rem; }
+  .dateline { min-width: 0; font-size: 0.68rem; }
+
+  .site-nav { padding: 10px 0; font-size: 0.78rem; }
+  .site-nav a { margin: 0 8px; display: inline-block; padding: 4px 0; }
+
+  .info-strip { grid-template-columns: 1fr; }
+  .info-item { border-right: none !important; border-bottom: 1px solid var(--ft-rule); }
+  .info-item:last-child { border-bottom: none; }
+
+  .talk {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .talk-date {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .talk-date .kicker { margin: 0; }
+  .date-big { font-size: 1.0rem; }
+  .date-time { font-size: 0.72rem; }
+
+  .talk.featured { padding: 22px 20px; }
+  .talk.featured .talk-title { font-size: 1.4rem; }
+  .talk.featured .talk-speaker { font-size: 1rem; }
+
+  hr.rule { margin: 36px 0; }
+
+  .term-title { font-size: 1.3rem; }
+  .term + .term { margin-top: 40px; }
+}
