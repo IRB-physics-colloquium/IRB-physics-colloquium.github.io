@@ -286,6 +286,15 @@ hr.rule {
   text-align: justify;
 }
 
+/* A reference list sent along with an abstract. Left-aligned and a
+   step smaller than the abstract, so it reads as apparatus, not prose. */
+.talk-abstract.talk-refs {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--ft-muted);
+}
+
 .talk-links { margin: 6px 0 0; }
 
 .talk-links:empty { display: none; }
@@ -677,6 +686,7 @@ hr.rule {
 
   .talk.featured { padding: 22px 20px; }
   .talk-notice { font-size: 0.8rem; padding: 9px 12px; }
+  .talk-abstract.talk-refs { font-size: 0.80rem; }   /* keeps each reference on one line at 375px */
   .talk.featured .talk-title { font-size: 1.4rem; }
   .talk.featured .talk-speaker { font-size: 1rem; }
 
