@@ -595,6 +595,25 @@ hr.rule {
   margin: 0;
 }
 
+/* Divider inside #upcoming for talks already booked in the
+   following term. Same look as an archive term heading, smaller. */
+.term-break {
+  margin: 36px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--ft-ink);
+}
+
+.term-break-title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--ft-ink);
+}
+
+.term-break + .talk { border-top: none; padding-top: 8px; }
+
 /* The first talk in each term sits under its own heading rule,
    so it does not need a second border above it. */
 .term .talk:first-of-type { border-top: none; padding-top: 8px; }
